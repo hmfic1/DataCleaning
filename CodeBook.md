@@ -1,7 +1,3 @@
----
-title: "CodeBook.md"
----
-
 ##   Code Book
 
 Subject (integer)
@@ -15,7 +11,7 @@ Activity (character)
 Measure (character)
 -- identifies variable
 -- see section "Complete list of variables" below
--- only mean() and std() variables selected for tidy data set
+-- only mean() and std() variables selected for final data set
 
 AveMeasure (numeric)
 -- calculated mean of each variable for each activity and each subject
