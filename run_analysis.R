@@ -48,57 +48,38 @@ meanColumnNames <- grep(".mean\\().", features$V2, value = TRUE)
 
 ##     Now we know which columns ("stdColumns" and "meanColumns") have the data we want to evaluate
 ##     Subset test and training datasets ("Xtestfile" and "Xtrainfile"), getting only the mean() and std() columns 
-##     Then, replace replace variable names using the colnames function
+
 
 XTestSelectedstd <- XTestfile[,stdColumns]
-colnames(XTestSelectedstd) <- stdColumnNames
-
 XTestSelectedmean <- XTestfile[,meanColumns]
-colnames(XTestSelectedmean) <- meanColumnNames
 
 XTrainSelectedstd <- XTrainfile[,stdColumns]
-colnames(XTrainSelectedstd) <- stdColumnNames
-
 XTrainSelectedmean <- XTrainfile[,meanColumns]
-colnames(XTrainSelectedmean) <- meanColumnNames
 
 ##    The Subject and Activity datasets have the information about which test subject and which activity were performed
-##    cbind the subject and activity data, replace the variable names, and replace the activity values with descriptive names
-##    Because we're doing this for both the test data and the training data, we'll perform the activities twice
+##    cbind the subject and activity data with the std and mean data
 
-yy <- cbind(SubjectTestFile, ActivityTestFile)
-colnames(yy) <- c("Subject", "Activity")
-
-yy$Activity <- as.character(yy$Activity)
-yy$Activity[yy$Activity == "1"] <- "WALKING"
-yy$Activity[yy$Activity == "2"] <- "WALKING_UPSTAIRS"
-yy$Activity[yy$Activity == "3"] <- "WALKING_DOWNSTAIRS"
-yy$Activity[yy$Activity == "4"] <- "SITTING"
-yy$Activity[yy$Activity == "5"] <- "STANDING"
-yy$Activity[yy$Activity == "6"] <- "LAYING"
-
-zz <- cbind(SubjectTrainFile, ActivityTrainFile)
-colnames(zz) <- c("Subject", "Activity")
-
-zz$Activity <- as.character(zz$Activity)
-zz$Activity[zz$Activity == "1"] <- "WALKING"
-zz$Activity[zz$Activity == "2"] <- "WALKING_UPSTAIRS"
-zz$Activity[zz$Activity == "3"] <- "WALKING_DOWNSTAIRS"
-zz$Activity[zz$Activity == "4"] <- "SITTING"
-zz$Activity[zz$Activity == "5"] <- "STANDING"
-zz$Activity[zz$Activity == "6"] <- "LAYING"
-
-##     cbind the data for the std() and mean() extracted data, then add the descriptors (subject, activity to the front)
-
-XTest0 <- cbind(XTestSelectedstd, XTestSelectedmean)
-XTest1 <- cbind(yy, XTest0)
-
-XTrain0 <- cbind(XTrainSelectedstd, XTrainSelectedmean)
-XTrain1 <- cbind(zz, XTrain0)
+yy <- cbind(SubjectTestFile, ActivityTestFile, XTestSelectedstd, XTestSelectedmean)
+zz <- cbind(SubjectTrainFile, ActivityTrainFile, XTrainSelectedstd, XTrainSelectedmean)
 
 ##     Merge the two data sets; this will be the dataset from which we can use dplyr and tidyr to evaluate the data
 
-FinalData <- rbind(XTest1, XTrain1)
+FinalData <- rbind(yy, zz)
+
+##     Replace replace variable names using the colnames function
+
+colnames(FinalData) <- c("Subject", "Activity", stdColumnNames, meanColumnNames)
+
+##     Replace Activity values with text for easier evaluation
+
+FinalData$Activity <- as.character(FinalData$Activity)
+FinalData$Activity[FinalData$Activity == "1"] <- "WALKING"
+FinalData$Activity[FinalData$Activity == "2"] <- "WALKING_UPSTAIRS"
+FinalData$Activity[FinalData$Activity == "3"] <- "WALKING_DOWNSTAIRS"
+FinalData$Activity[FinalData$Activity == "4"] <- "SITTING"
+FinalData$Activity[FinalData$Activity == "5"] <- "STANDING"
+FinalData$Activity[FinalData$Activity == "6"] <- "LAYING"
+
 
 ##     Gather the data based on the measurements
 
