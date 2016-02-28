@@ -49,7 +49,6 @@ meanColumnNames <- grep(".mean\\().", features$V2, value = TRUE)
 ##     Now we know which columns ("stdColumns" and "meanColumns") have the data we want to evaluate
 ##     Subset test and training datasets ("Xtestfile" and "Xtrainfile"), getting only the mean() and std() columns 
 
-
 XTestSelectedstd <- XTestfile[,stdColumns]
 XTestSelectedmean <- XTestfile[,meanColumns]
 
@@ -97,24 +96,23 @@ ss <- rr %>%
 
 ss <- arrange(ss, Subject, Activity, Measure)
 
-##    Initial Cleanup
+##    Write output file, making sure to write character variables without quotes and to write data without headers
+
+write.table(ss, file = "SamsungFile.txt", sep = " ", quote = FALSE, row.names = FALSE, col.names = FALSE)
+
+##    Cleanup
 
 ##    Delete downloaded files including the original downloaded zipped file and all the unzipped files
 
 file.remove("data.zip")
 unlink("UCI HAR Dataset", recursive = TRUE)
 
-##    Write output file, making sure to write character variables without quotes and to write data without headers
-
-write.table(ss, file = "SamsungFile.txt", sep = " ", quote = FALSE, row.names = FALSE, col.names = FALSE)
-
 ##    Remove objects from environment
 
 rm(list=ls())
 
-print("End of Script")
-print("Check your directory for the file SamsungFile.txt")
-
-##    End
-
+##    End of Script
+##
+##    Check your working directory for the SamsungFile.txt file
+##
 
