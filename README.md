@@ -2,7 +2,7 @@
 ## Final Project
 ### February, 2016
 
-This project takes data 
+This project takes data from xxx performed yyy
 
 
 Before running the run_analysis.R script:
@@ -12,13 +12,18 @@ Before running the run_analysis.R script:
 * Ensure that you have the following packages installed: plyr, dplyr, tidyr
 * Set your working directory to the directory of your choice
     + This script will download a zip file to your working directory
-    + It will then unzip the file
+    + It will then unzip the downloaded file and read data from the directories and subdirectories created from the unzip command
 * Open the run_analysis.R script in R Studio
 
+
+This script will download the raw data into the current working directory. It will then unzip the data, 
 
 The script cleans up after itself. Data files downloaded (and unzipped) are eventually deleted. Additionally, the environment is cleaned of objects by the use of the rm(list=ls()) command at the end of the script.
 
 
+
+
+This script will 
 
 
 Citation:

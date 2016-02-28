@@ -3,6 +3,12 @@ title: "CodeBook.md"
 output: html_document
 ---
 
+Information about each variable (including units)
+Information about the summary (e.g. why chosen?)
+Information about the experimental study design
+Include a section called "Study Desigh" that has a thorough description of how you pulled data
+
+
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
