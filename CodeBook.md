@@ -4,18 +4,21 @@ title: "CodeBook.md"
 
 ##   Code Book
 
-Subject
+Subject (integer)
+-- identifies the subject being monitored
+-- values from 1 - 30
 
-Activity
+Activity (character)
+-- identifies activity being monitored
+-- values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
-Measure
+Measure (character)
+-- identifies variable
+-- see section "Complete list of variables" below
+-- only mean() and std() variables selected for tidy data set
 
-AveMeasure
-
-
-
-Information about each variable (including units)
-Information about the summary (e.g. why chosen?)
+AveMeasure (numeric)
+-- calculated mean of each variable for each activity and each subject
 
 
 ##   Study Design
@@ -77,7 +80,7 @@ tBodyGyroMean
 tBodyGyroJerkMean
 
 
-####   Complete list of variable of each feature vector (included in features.txt file from project team)
+##   Complete list of variables
 
 1 tBodyAcc-mean()-X
 2 tBodyAcc-mean()-Y
@@ -88,7 +91,7 @@ tBodyGyroJerkMean
 7 tBodyAcc-mad()-X
 8 tBodyAcc-mad()-Y
 9 tBodyAcc-mad()-Z
-10 tBodyAcc-max()-X
+10 tBodyAcc-max()-X 
 11 tBodyAcc-max()-Y
 12 tBodyAcc-max()-Z
 13 tBodyAcc-min()-X
@@ -98,7 +101,7 @@ tBodyGyroJerkMean
 17 tBodyAcc-energy()-X
 18 tBodyAcc-energy()-Y
 19 tBodyAcc-energy()-Z
-20 tBodyAcc-iqr()-X
+20 tBodyAcc-iqr()-X 
 21 tBodyAcc-iqr()-Y
 22 tBodyAcc-iqr()-Z
 23 tBodyAcc-entropy()-X
@@ -108,7 +111,7 @@ tBodyGyroJerkMean
 27 tBodyAcc-arCoeff()-X,2
 28 tBodyAcc-arCoeff()-X,3
 29 tBodyAcc-arCoeff()-X,4
-30 tBodyAcc-arCoeff()-Y,1
+30 tBodyAcc-arCoeff()-Y,1 
 31 tBodyAcc-arCoeff()-Y,2
 32 tBodyAcc-arCoeff()-Y,3
 33 tBodyAcc-arCoeff()-Y,4
@@ -118,7 +121,7 @@ tBodyGyroJerkMean
 37 tBodyAcc-arCoeff()-Z,4
 38 tBodyAcc-correlation()-X,Y
 39 tBodyAcc-correlation()-X,Z
-40 tBodyAcc-correlation()-Y,Z
+40 tBodyAcc-correlation()-Y,Z 
 41 tGravityAcc-mean()-X
 42 tGravityAcc-mean()-Y
 43 tGravityAcc-mean()-Z
@@ -128,7 +131,7 @@ tBodyGyroJerkMean
 47 tGravityAcc-mad()-X
 48 tGravityAcc-mad()-Y
 49 tGravityAcc-mad()-Z
-50 tGravityAcc-max()-X
+50 tGravityAcc-max()-X 
 51 tGravityAcc-max()-Y
 52 tGravityAcc-max()-Z
 53 tGravityAcc-min()-X
@@ -138,7 +141,7 @@ tBodyGyroJerkMean
 57 tGravityAcc-energy()-X
 58 tGravityAcc-energy()-Y
 59 tGravityAcc-energy()-Z
-60 tGravityAcc-iqr()-X
+60 tGravityAcc-iqr()-X 
 61 tGravityAcc-iqr()-Y
 62 tGravityAcc-iqr()-Z
 63 tGravityAcc-entropy()-X
@@ -148,7 +151,7 @@ tBodyGyroJerkMean
 67 tGravityAcc-arCoeff()-X,2
 68 tGravityAcc-arCoeff()-X,3
 69 tGravityAcc-arCoeff()-X,4
-70 tGravityAcc-arCoeff()-Y,1
+70 tGravityAcc-arCoeff()-Y,1 
 71 tGravityAcc-arCoeff()-Y,2
 72 tGravityAcc-arCoeff()-Y,3
 73 tGravityAcc-arCoeff()-Y,4
@@ -158,7 +161,7 @@ tBodyGyroJerkMean
 77 tGravityAcc-arCoeff()-Z,4
 78 tGravityAcc-correlation()-X,Y
 79 tGravityAcc-correlation()-X,Z
-80 tGravityAcc-correlation()-Y,Z
+80 tGravityAcc-correlation()-Y,Z 
 81 tBodyAccJerk-mean()-X
 82 tBodyAccJerk-mean()-Y
 83 tBodyAccJerk-mean()-Z
@@ -168,7 +171,7 @@ tBodyGyroJerkMean
 87 tBodyAccJerk-mad()-X
 88 tBodyAccJerk-mad()-Y
 89 tBodyAccJerk-mad()-Z
-90 tBodyAccJerk-max()-X
+90 tBodyAccJerk-max()-X 
 91 tBodyAccJerk-max()-Y
 92 tBodyAccJerk-max()-Z
 93 tBodyAccJerk-min()-X
@@ -178,7 +181,7 @@ tBodyGyroJerkMean
 97 tBodyAccJerk-energy()-X
 98 tBodyAccJerk-energy()-Y
 99 tBodyAccJerk-energy()-Z
-100 tBodyAccJerk-iqr()-X
+100 tBodyAccJerk-iqr()-X 
 101 tBodyAccJerk-iqr()-Y
 102 tBodyAccJerk-iqr()-Z
 103 tBodyAccJerk-entropy()-X
