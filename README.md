@@ -9,8 +9,6 @@ The experiments were carried out with a group of 30 volunteers, age 19-48. Each 
 
 The project team then derived body linear acceleration and angular velocity from these readings. In addition, the magnitude of the three dimensional signals were calculated. Subsequently, a Fast Fourier Transform (FFT) was applied to some of the signals to to produce other variables. The signals were used to estimate variables for each pattern. 
 
-See the codebook (CodeBook.md) for a list of the variables provided ("Measure").
-
 Data was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
 Additional information about the experiments can be found at:  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -19,7 +17,7 @@ Additional information about the experiments can be found at:  https://d396qusza
 
 The goal of the Getting and Cleaning Data project is to demonstrate techniques for extracting data from the internet, reshaping the data, and tidying it to provide a format easily used for subsequent analysis.
 
-The run_analysis.R script reads the data provided subsets it, selecting only the mean and standard deviation variables. The script then manipulates the data to combine the test and training data and to add appropriate varable names. 
+The run_analysis.R script reads the data provided and subsets it, selecting only the mean and standard deviation variables. The script then manipulates the data to combine the test and training data and to add appropriate varable names. 
 
 The script groups the data and summarizes it to create a tidy data set with the average of each variable for each activity for each subject, putting the final data into a format ready for further evaluation.
 
@@ -42,7 +40,7 @@ The script will perform various functions to merge data from the training and te
 
 The script cleans up after itself. Data files downloaded (and unzipped) are eventually deleted. Additionally, the environment is cleaned of objects by the use of the rm(list=ls()) command at the end of the script.
 
-Before cleaning the environment, the script will write the data out to a text file. The test file name will be SamsungFile.txt.
+Before cleaning the environment, the script will write the data out to a text file. The test file name will be SamsungFile.txt. A header row is included in the text file.
 
 
 ### Citation

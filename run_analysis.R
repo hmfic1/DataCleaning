@@ -96,9 +96,9 @@ ss <- rr %>%
 
 ss <- arrange(ss, Subject, Activity, Measure)
 
-##    Write output file, making sure to write character variables without quotes and to write data without headers
+##    Write output file, making sure to write character variables without quotes
 
-write.table(ss, file = "SamsungFile.txt", sep = " ", quote = FALSE, row.names = FALSE, col.names = FALSE)
+write.table(ss, file = "SamsungFile.txt", sep = " ", quote = FALSE, row.names = FALSE)
 
 ##    Cleanup
 
