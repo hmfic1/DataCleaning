@@ -3,13 +3,28 @@
 ### February, 2016
 
 ####   Backgroud
-This project takes data from experiments performed by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, and Luca Oneto from the Università degli Studi di Genova.
+This project takes data from experiments performed by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, and Luca Oneto of the Università degli Studi di Genova.
 
 The experiments were carried out with a group of 30 volunteers, age 19-48. Each volunteer performed six activities (Walking, Walking Upstairs, Walking Downstairs, Sitting, Standing, and Laying) wearing a Samsung Galaxy S II smartphone on the waist. Using the embedded accelerometer and gyroscope, the project team captured linear acceleration and angular velocity on three axes. 
+
+The project team then derived body linear acceleration and angular velocity from these readings. In addition, the magnitude of the three dimensional signals were calculated. Subsequently, a Fast Fourier Transform (FFT) was applied to some of the signals to to produce other variables.
+
+The signals were used to estimate variables for each pattern. 
+
+See the codebook (CodeBook.md) for a list of the variables provided.
 
 Data was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
 Additional information about the experiments can be found at:  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+####    Project 
+
+The run_analysis.R script reads in the data provided and selects the mean and standard deviation variables. The script then manipulates the data to combine the test and training data and to add appropriate varable names. Finally, the scripts tidies the data using tidyr functions to put the final data into a format ready for further evaluation.
+
+The script groups the data and summarizes it, using a mean function, to create a tidy data set with the average of each variable for each activity for each subject.
+
+The script writes out the tidy data set to SamsungFile.txt in the user's R Studio working directory.
+
 
 ####    Running the R script
 
